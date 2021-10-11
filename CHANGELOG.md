@@ -21,13 +21,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [37.0.0] - 2021-02-14
 
 ### Added
-- Official support for Xdebug 3 [#390](https://github.com/markshust/docker-magento/issues/390). The new PHP images are `7.3-fpm-12` & `7.4-fpm-5`.
+- Official support for Xdebug 3 [#390](https://github.com/AyoubJadouli/docker-magento/issues/390). The new PHP images are `7.3-fpm-12` & `7.4-fpm-5`.
 - If you need to still use Xdebug 2, update your docker-compose.yml files to instead look at PHP image `7.3-fpm-11` or `7.4-fpm-4`. These images are exactly the same other than being pegged to Xdebug 2.
 
 ## [36.0.2] - 2021-02-14
 
 ### Updated
-- Reverted Xdebug to version 2 for backwards-compatible support [#390](https://github.com/markshust/docker-magento/issues/390).
+- Reverted Xdebug to version 2 for backwards-compatible support [#390](https://github.com/AyoubJadouli/docker-magento/issues/390).
 
 ## [36.0.1] - 2021-02-04
 
@@ -37,29 +37,29 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [36.0.0] - 2021-02-04
 
 ### Added
-- New Elasticsearch Docker images `7.7`, `7.7.1-0` [#392](https://github.com/markshust/docker-magento/issues/392).
-- SpellCheck GitHub Action for continuous integration checks of shell scripts [#387](https://github.com/markshust/docker-magento/pull/387), [#388](https://github.com/markshust/docker-magento/pull/388).
+- New Elasticsearch Docker images `7.7`, `7.7.1-0` [#392](https://github.com/AyoubJadouli/docker-magento/issues/392).
+- SpellCheck GitHub Action for continuous integration checks of shell scripts [#387](https://github.com/AyoubJadouli/docker-magento/pull/387), [#388](https://github.com/AyoubJadouli/docker-magento/pull/388).
 
 ### Fixed
-- Support filesystem paths with spaces [e5f22e56](https://github.com/markshust/docker-magento/commit/e5f22e56fcd382b8339d5804a9d236dd6b238a3d).
-- Added missing `bin/cache-clean` file [f0e57202](https://github.com/markshust/docker-magento/commit/f0e5720281cd9f536f163bd5bdfe5bd66a956dc6).
+- Support filesystem paths with spaces [e5f22e56](https://github.com/AyoubJadouli/docker-magento/commit/e5f22e56fcd382b8339d5804a9d236dd6b238a3d).
+- Added missing `bin/cache-clean` file [f0e57202](https://github.com/AyoubJadouli/docker-magento/commit/f0e5720281cd9f536f163bd5bdfe5bd66a956dc6).
 
 ### Updated
-- Updated PHP images to NodeJS version 14 LTS [4a81f2b8](https://github.com/markshust/docker-magento/commit/4a81f2b8c61674b261ee7b42752e21fc8d5e945d).
+- Updated PHP images to NodeJS version 14 LTS [4a81f2b8](https://github.com/AyoubJadouli/docker-magento/commit/4a81f2b8c61674b261ee7b42752e21fc8d5e945d).
 - Changed `db` service to use MySQL 8.0 Docker image.
 
 ## [35.0.0] - 2021-01-29
 
 ### Added
-- Automatically purge caches for a better dev experience [#380](https://github.com/markshust/docker-magento/issues/380).
-- Stop script execution on error [#363](https://github.com/markshust/docker-magento/pull/363/).
-- Make xdebug command understand partials [#371](https://github.com/markshust/docker-magento/pull/371).
-- Extended functionality for `bin/xdebug`, including new `status` and `toggle` commands [#332](https://github.com/markshust/docker-magento/pull/332).
-- Check Elasticsearch connection before setup:install [#326](https://github.com/markshust/docker-magento/pull/326).
+- Automatically purge caches for a better dev experience [#380](https://github.com/AyoubJadouli/docker-magento/issues/380).
+- Stop script execution on error [#363](https://github.com/AyoubJadouli/docker-magento/pull/363/).
+- Make xdebug command understand partials [#371](https://github.com/AyoubJadouli/docker-magento/pull/371).
+- Extended functionality for `bin/xdebug`, including new `status` and `toggle` commands [#332](https://github.com/AyoubJadouli/docker-magento/pull/332).
+- Check Elasticsearch connection before setup:install [#326](https://github.com/AyoubJadouli/docker-magento/pull/326).
 
 ### Updated
-- The onelinesetup now accepts a `community` or `enterprise` param to pick version to install [b2399ff1](https://github.com/markshust/docker-magento/commit/ad573f6f3c8d2f7066034cbde936a86eb2399ff1).
-- Fix bin/start for macOS Big Sur [#355](https://github.com/markshust/docker-magento/pull/355/).
+- The onelinesetup now accepts a `community` or `enterprise` param to pick version to install [b2399ff1](https://github.com/AyoubJadouli/docker-magento/commit/ad573f6f3c8d2f7066034cbde936a86eb2399ff1).
+- Fix bin/start for macOS Big Sur [#355](https://github.com/AyoubJadouli/docker-magento/pull/355/).
 
 ## [34.2.0] - 2020-10-15
 
@@ -77,36 +77,36 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [34.0.0] - 2020-10-11
 
 ### Added
-- New `bin/setup-integration-tests` script to setup integration tests [3c021ff](https://github.com/markshust/docker-magento/commit/3c021ff6c92e49fad669deed0805cceae26bdccf).
+- New `bin/setup-integration-tests` script to setup integration tests [3c021ff](https://github.com/AyoubJadouli/docker-magento/commit/3c021ff6c92e49fad669deed0805cceae26bdccf).
 - Added `MYSQL_HOST` environment variable to `env/db.env` file.
-- New Nginx `1.18-3` Docker images uses Alpine as base image [PR #306](https://github.com/markshust/docker-magento/pull/306).
+- New Nginx `1.18-3` Docker images uses Alpine as base image [PR #306](https://github.com/AyoubJadouli/docker-magento/pull/306).
 
 ### Updated
-- Prevent containers from starting if volume mapping doesn't exist, validate volumes to avoid empty folder creation [PR #256](https://github.com/markshust/docker-magento/pull/256).
-- Setup script uses MySQL `env/db.env` file for database connection credentials [PR #302](https://github.com/markshust/docker-magento/pull/302).
-- Increased MySQL's `max_allowed_packet` to `64M` in `docker-compose.yml` file [PR #303](https://github.com/markshust/docker-magento/pull/303).
-- `docker-compose.yml` now uses Alpine images for Redis and RabbitMQ [#305](https://github.com/markshust/docker-magento/pull/305).
+- Prevent containers from starting if volume mapping doesn't exist, validate volumes to avoid empty folder creation [PR #256](https://github.com/AyoubJadouli/docker-magento/pull/256).
+- Setup script uses MySQL `env/db.env` file for database connection credentials [PR #302](https://github.com/AyoubJadouli/docker-magento/pull/302).
+- Increased MySQL's `max_allowed_packet` to `64M` in `docker-compose.yml` file [PR #303](https://github.com/AyoubJadouli/docker-magento/pull/303).
+- `docker-compose.yml` now uses Alpine images for Redis and RabbitMQ [#305](https://github.com/AyoubJadouli/docker-magento/pull/305).
 - `docker-compose.yml` file now uses new Alpine images for Redis, RabbitMQ & Nginx.
-- `bin/setup` script updated to use Redis for cache and session directly in installer script [PR #304](https://github.com/markshust/docker-magento/pull/304).
-- `bin/setup` script sets Admin URL to `/admin` [PR #304](https://github.com/markshust/docker-magento/pull/304).
-- Enabling/disabling Xdebug now only restarts `phpfpm` container rather than all containers [PR #314](https://github.com/markshust/docker-magento/pull/314).
-- `bin/setup` script moves `.vscode` directory to `src` after install [846d02c](https://github.com/markshust/docker-magento/commit/846d02c12c5af8005fe0cbb0b167b97f501db0c9).
+- `bin/setup` script updated to use Redis for cache and session directly in installer script [PR #304](https://github.com/AyoubJadouli/docker-magento/pull/304).
+- `bin/setup` script sets Admin URL to `/admin` [PR #304](https://github.com/AyoubJadouli/docker-magento/pull/304).
+- Enabling/disabling Xdebug now only restarts `phpfpm` container rather than all containers [PR #314](https://github.com/AyoubJadouli/docker-magento/pull/314).
+- `bin/setup` script moves `.vscode` directory to `src` after install [846d02c](https://github.com/AyoubJadouli/docker-magento/commit/846d02c12c5af8005fe0cbb0b167b97f501db0c9).
 
 ### Fixed
-- Exception while running integration tests [#292](https://github.com/markshust/docker-magento/pull/292).
-- Nested files not copying in copytocontainer script [#295](https://github.com/markshust/docker-magento/pull/295) [#296](https://github.com/markshust/docker-magento/pull/295).
-- Ubuntu unable to start because of missing volumes [#309](https://github.com/markshust/docker-magento/issues/309).
+- Exception while running integration tests [#292](https://github.com/AyoubJadouli/docker-magento/pull/292).
+- Nested files not copying in copytocontainer script [#295](https://github.com/AyoubJadouli/docker-magento/pull/295) [#296](https://github.com/AyoubJadouli/docker-magento/pull/295).
+- Ubuntu unable to start because of missing volumes [#309](https://github.com/AyoubJadouli/docker-magento/issues/309).
 
 ## [33.0.0] - 2020-07-30
 
 ### Added
-- The `php:7.4-fpm` Docker image has been setup with full support for Magento 2.4 (see [images/php/7.4](https://github.com/markshust/docker-magento/tree/master/images/php/7.4)).
-- Added easy way to mount an SSH key to the container (see [#89](https://github.com/markshust/docker-magento/issues/89)).
+- The `php:7.4-fpm` Docker image has been setup with full support for Magento 2.4 (see [images/php/7.4](https://github.com/AyoubJadouli/docker-magento/tree/master/images/php/7.4)).
+- Added easy way to mount an SSH key to the container (see [#89](https://github.com/AyoubJadouli/docker-magento/issues/89)).
 - The `bin/download` script now falls back to Hypernode's Magento Download mirror in the event the archive doesn't exist or fails to download from Nexcess.
 
 ### Updated
 - All Docker volumes now use `:cached` rather than `:delegated`. The `delegated` volume functionality is changing in a future version of Docker for Mac to use Mutagen volumes, and the implementation is very buggy & awkward. Using the `cached` flag retains the current functionality we've been using in `delegated` without any changes (confirmed in [docker/for-mac#1592](https://github.com/docker/for-mac/issues/1592#issuecomment-662504816)).
-- Updated `bin/setup-ssl-ca` so SSL generation works on Linux ([#222](https://github.com/markshust/docker-magento/issues/222))
+- Updated `bin/setup-ssl-ca` so SSL generation works on Linux ([#222](https://github.com/AyoubJadouli/docker-magento/issues/222))
 - Updated `php` Docker images to use most recent version of Composer (1.10.9).
 - The `bin/setup` script now runs `composer update` rather than `composer install`. There was an error happening with `composer install`, and with the start of the project it's best to just get the most recent Composer packages anyway.
 - The `bin/setup` script now sets Elasticsearch 7 as the default catalog search engine directly when executing `bin/magento setup:install`.
@@ -126,7 +126,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 - Updated `bin/dev-urn-catalog-generate` to account for new versions of PHPStorm (simplified).
-- Indexing error with possible ElasticSearch modules ([#262](https://github.com/markshust/docker-magento/issues/262)).
+- Indexing error with possible ElasticSearch modules ([#262](https://github.com/AyoubJadouli/docker-magento/issues/262)).
 
 ### Updated
 - Updated ElasticSearch 6 to version 6.8.
@@ -161,7 +161,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [30.0.3] - 2020-04-25
 
 ### Updated
-- Reverted disabling Temando_Shipping module in bin/magento for sample data installation. <a href="https://github.com/markshust/docker-magento/issues/250">#250</a>
+- Reverted disabling Temando_Shipping module in bin/magento for sample data installation. <a href="https://github.com/AyoubJadouli/docker-magento/issues/250">#250</a>
 
 ## [30.0.2] - 2020-04-17
 
@@ -203,20 +203,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [28.0.0] - 2020-01-31
 
 ### Updated
-- Upgraded NodeJS to 10.x, as 8.x was failing to install npm due to source repository updates <a href="https://github.com/markshust/docker-magento/issues/210">#210</a>
+- Upgraded NodeJS to 10.x, as 8.x was failing to install npm due to source repository updates <a href="https://github.com/AyoubJadouli/docker-magento/issues/210">#210</a>
 
 ### Removed
-- Removed PHP 7.1 image from filesystem as it has been deprecated. If you need to reference the last version of these images, they are available at <a href="https://github.com/markshust/docker-magento/tree/27.2.0/images/php/7.1">https://github.com/markshust/docker-magento/tree/27.2.0/images/php/7.1</a>
+- Removed PHP 7.1 image from filesystem as it has been deprecated. If you need to reference the last version of these images, they are available at <a href="https://github.com/AyoubJadouli/docker-magento/tree/27.2.0/images/php/7.1">https://github.com/AyoubJadouli/docker-magento/tree/27.2.0/images/php/7.1</a>
 
 ## [27.2.0] - 2020-01-22
 
 ### Added
-- Support for RabbitMQ <a href="https://github.com/markshust/docker-magento/pull/212">PR #212</a>
+- Support for RabbitMQ <a href="https://github.com/AyoubJadouli/docker-magento/pull/212">PR #212</a>
 
 ## [27.1.0] - 2020-01-20
 
 ### Added
-- New `bin/setup-ssl` script to generate valid SSL certificates <a href="https://github.com/markshust/docker-magento/issues/211">#211</a>
+- New `bin/setup-ssl` script to generate valid SSL certificates <a href="https://github.com/AyoubJadouli/docker-magento/issues/211">#211</a>
 - New `markoshust/magento-nginx:1.13-8` image containing mkcert script
 
 ### Updated
@@ -228,7 +228,7 @@ Happy new year! 🎉
 
 ### Updated
 - Updated the PHP base images from Debian Stretch to Buster
-- Updated PHP libsodium package to `1.0.17` to support `HASH_VERSION_ARGON2ID13` <a href="https://github.com/markshust/docker-magento/issues/193">#193</a>
+- Updated PHP libsodium package to `1.0.17` to support `HASH_VERSION_ARGON2ID13` <a href="https://github.com/AyoubJadouli/docker-magento/issues/193">#193</a>
 
 ### Added
 - Built-in support for Blackfire.io
@@ -411,8 +411,8 @@ Happy new year! 🎉
 - Added `docker-compose.dev.yml` file for development-only specifications.
 
 ### Removed
-- The Magento 1 version of this development environment has been deprecated and is no longer supported. PHP 5 was used as it's base, and that version has reached end-of-life. If you still wish to use this setup, please reference [compose/magento-1 on tag 20.1.1](https://github.com/markshust/docker-magento/tree/master/compose/magento-1), but please be aware these images are no longer maintained.
-- The PHP 5.6 and 7.0 images have been deprecated, as both of these versions have reached end-of-life. These versions have been removed from the README and are no longer maintained. If you still wish to use these images, please reference the [README on tag 20.1.1](https://github.com/markshust/docker-magento/blob/master/README.md), but please be aware these images are no longer maintained.
+- The Magento 1 version of this development environment has been deprecated and is no longer supported. PHP 5 was used as it's base, and that version has reached end-of-life. If you still wish to use this setup, please reference [compose/magento-1 on tag 20.1.1](https://github.com/AyoubJadouli/docker-magento/tree/master/compose/magento-1), but please be aware these images are no longer maintained.
+- The PHP 5.6 and 7.0 images have been deprecated, as both of these versions have reached end-of-life. These versions have been removed from the README and are no longer maintained. If you still wish to use these images, please reference the [README on tag 20.1.1](https://github.com/AyoubJadouli/docker-magento/blob/master/README.md), but please be aware these images are no longer maintained.
 - Removed `bin/copydir` and `bin/copydirall` helper scripts.
 
 ## [20.1.1] - 2018-12-10

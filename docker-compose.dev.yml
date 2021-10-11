@@ -1,5 +1,5 @@
-# Mark Shust's Docker Configuration for Magento
-# (https://github.com/markshust/docker-magento)
+# Ayoub JADOULI's Docker Configuration for Magento
+# (https://github.com/AyoubJadouli/docker-magento)
 #
 # Version 37.0.2
 
@@ -23,7 +23,7 @@ services:
       # To sync your SSH to the container, uncomment the following line:
       #- ~/.ssh/id_rsa:/var/www/.ssh/id_rsa:cached
       # Linux only: remove the above lines (except nginx.conf line) and mount the entire src directory with:
-      #- ./src:/var/www/html:cached
+      #- ../web:/var/www/html:cached
 
   phpfpm:
     volumes: *appvolumes

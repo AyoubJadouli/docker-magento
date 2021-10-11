@@ -1,0 +1,135 @@
+# Ayoub JADOULI's Docker Configuration for Magento
+# (https://github.com/ayoubjadouli/docker-magento)
+#
+# Version 38.0.2
+
+version: "3"
+
+services:
+  app:
+    build:
+      context: ./iac/images/nginx/1.18
+    ports:
+      - "80:8000"
+      - "443:8443"
+    links:
+      - db
+      - phpfpm
+    volumes: &appvolumes
+      - ~/.composer:/var/www/.composer:cached
+      - appdata:/var/www/html
+      - sockdata:/sock
+      - ./iac/ssldata:/etc/nginx/certs
+    labels:
+      - "traefik.enable=true"
+############################## Config du nom de domaine de la Cert. #######################      
+      - "traefik.http.routers.app.rule=Host(`test.exemple.com`)"
+    ###########################################____________#######
+      - "traefik.http.routers.app.entrypoints=websecure"
+      - "traefik.http.routers.app.tls.certresolver=myresolver"
+      - "traefik.http.services.app.loadbalancer.server.port=8080"
+
+  varnish:
+    build:
+      context: ./iac/images/varnish/6.0
+    container_name: varnish
+    depends_on:
+      - web_server
+    volumes:
+      - ./iac/images/varnish/6.0/default.vcl:/etc/varnish/default.vcl
+      - ./iac/images/varnish/6.0/secret:/etc/varnish/secret
+    ports:
+      - "8088:80"
+    links:
+      - web_server
+      - database_server
+
+  phpfpm:
+    build:
+      context: ./iac/images/php/7.4
+    links:
+      - db
+    volumes: *appvolumes
+
+  # db:
+  #   image: percona:8.0
+  #   command: --max_allowed_packet=64M
+  #   ports:
+  #     - "3306:3306"
+  #   env_file: env/db.env
+  #   volumes:
+  #     - dbdata:/var/lib/mysql
+
+  db:
+    image: mariadb:10.4
+    command: --max_allowed_packet=64M
+    ports:
+      - "3306:3306"
+    env_file: env/db.env
+    volumes:
+      - dbdata:/var/lib/mysql
+
+  redis:
+    image: redis:6.0-alpine
+
+  elasticsearch:
+    build:
+      context: ./iac//images/elasticsearch/7.10
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - "discovery.type=single-node"
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+
+  rabbitmq:
+    image: rabbitmq:3.8-management-alpine
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    volumes:
+      - rabbitmqdata:/var/lib/rabbitmq
+
+
+  traefik:
+    image: "traefik:v2.3"
+    container_name: "traefik"
+    command:
+      #- "--log.level=DEBUG"
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.websecure.address=:443"
+      - "--entrypoints.web.address=:80"
+      - "--certificatesresolvers.myresolver.acme.tlschallenge=true"
+############################## SSL  Config  #######################
+     # - "--log.level=DEBUG"
+     # - "--certificatesresolvers.myresolver.acme.caserver=https://acme-staging-v02.api.letsencrypt.$
+      - "--certificatesresolvers.myresolver.acme.email=test@exemple.com"
+      - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
+############################  Redirection #################################
+      - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
+      - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+    ports:
+      - "443:443"
+      - "8080:8080"
+      - "80:80"
+    volumes:
+      - "./iac/ssldata:/letsencrypt"
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+  # Disabling cron by default as it uses higher CPU, enable if needed
+  #cron:
+  #  image: markoshust/magento-php:7.4-fpm-5
+  #  user: root
+  #  command: /usr/local/bin/cronstart
+  #  tty: true
+  #  links:
+  #    - db
+  #  volumes: *appvolumes
+
+volumes:
+  appdata:
+  dbdata:
+  rabbitmqdata:
+  sockdata:
+  ssldata:
