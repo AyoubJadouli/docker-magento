@@ -90,7 +90,7 @@ RUN curl -sS https://getcomposer.org/installer | \
 
 RUN mkdir /var/www/.composer-global \
   && composer init --working-dir=/var/www/.composer-global --no-interaction \
-  && composer require --working-dir=/var/www/.composer-global AyoubJADOULI/magento2-metapackage-devtools-cli:^1.0
+  && composer require --working-dir=/var/www/.composer-global markshust/magento2-metapackage-devtools-cli:^1.0
 
 RUN curl -s https://packages.blackfire.io/gpg.key | apt-key add - \
   && echo "deb http://packages.blackfire.io/debian any main" | tee /etc/apt/sources.list.d/blackfire.list \
