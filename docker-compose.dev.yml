@@ -9,11 +9,11 @@ services:
   app:
     volumes: &appvolumes
       # Host mounts with performance penalty, only put what is necessary here
-      - ./src/app/code:/var/www/html/app/code:cached
-      - ./src/app/design:/var/www/html/app/design:cached
-      - ./src/app/etc:/var/www/html/app/etc:cached
-      - ./src/composer.json:/var/www/html/composer.json:cached
-      - ./src/composer.lock:/var/www/html/composer.lock:cached
+      #- ./src/app/code:/var/www/html/app/code:cached
+      #- ./src/app/design:/var/www/html/app/design:cached
+      #- ./src/app/etc:/var/www/html/app/etc:cached
+      #- ./src/composer.json:/var/www/html/composer.json:cached
+      #- ./src/composer.lock:/var/www/html/composer.lock:cached
       - ./src/nginx.conf.sample:/var/www/html/nginx.conf:cached
       #- ./src/auth.json:/var/www/html/auth.json:cached
       #- ./src/m2-hotfixes:/var/www/html/m2-hotfixes:cached
@@ -23,7 +23,7 @@ services:
       # To sync your SSH to the container, uncomment the following line:
       #- ~/.ssh/id_rsa:/var/www/.ssh/id_rsa:cached
       # Linux only: remove the above lines (except nginx.conf line) and mount the entire src directory with:
-      #- ../web:/var/www/html:cached
+      - ./src:/var/www/html:rw
 
   phpfpm:
     volumes: *appvolumes
