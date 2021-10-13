@@ -5,4 +5,6 @@ git fetch origin -qqq
 git checkout origin/master
 mv iac/.vscode ./
 rm -rf  .git
+mkdir src
+chmod 777 src
 git init
