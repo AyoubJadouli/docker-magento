@@ -2,9 +2,9 @@
 set -o errexit
 
 # shellcheck source=../env/db.env
-source env/db.env
+source iac/env/db.env
 # shellcheck source=../env/magento.env
-source env/magento.env
+source iac/env/magento.env
 
 BASE_URL=${1:-magento2.test}
 ES_HOST=elasticsearch
