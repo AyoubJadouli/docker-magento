@@ -19,7 +19,7 @@ services:
       - ~/.composer:/var/www/.composer:cached
       - appdata:/var/www/html
       - sockdata:/sock
-      - ./iac/ssldata:/etc/nginx/certs
+      - ssldata:/etc/nginx/certs
     labels:
       - "traefik.enable=true"
 ############################## Config du nom de domaine de la Cert. #######################      
