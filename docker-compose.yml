@@ -34,15 +34,15 @@ services:
       context: ./iac/images/varnish/6.0
     container_name: varnish
     depends_on:
-      - web_server
+      - app
     volumes:
       - ./iac/images/varnish/6.0/default.vcl:/etc/varnish/default.vcl
       - ./iac/images/varnish/6.0/secret:/etc/varnish/secret
     ports:
       - "8088:80"
     links:
-      - web_server
-      - database_server
+      - app
+      - db
 
   phpfpm:
     build:
