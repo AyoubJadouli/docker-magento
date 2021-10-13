@@ -10,8 +10,8 @@ services:
     build:
       context: ./iac/images/nginx/1.18
     ports:
-      - "80:8000"
-      - "443:8443"
+      - "8000:8000"
+      - "8443:8443"
     links:
       - db
       - phpfpm
