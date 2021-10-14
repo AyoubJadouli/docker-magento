@@ -17,7 +17,8 @@ services:
       - phpfpm
     volumes: &appvolumes
       - ~/.composer:/var/www/.composer:cached
-      - appdata:/var/www/html
+      - ./src:/var/www/html
+      #- appdata:/var/www/html
       - sockdata:/sock
       - ssldata:/etc/nginx/certs
     labels:
