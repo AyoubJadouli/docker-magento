@@ -23,7 +23,7 @@ services:
       # To sync your SSH to the container, uncomment the following line:
       #- ~/.ssh/id_rsa:/var/www/.ssh/id_rsa:cached
       # Linux only: remove the above lines (except nginx.conf line) and mount the entire src directory with:
-      - ./src:/var/www/html:rw
+      #- ./src:/var/www/html:rw
 
   phpfpm:
     volumes: *appvolumes
