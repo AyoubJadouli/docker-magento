@@ -89,7 +89,7 @@ RUN curl -sS https://getcomposer.org/installer | \
   php -- --2 --install-dir=/usr/local/bin --filename=composer
 
 RUN mkdir /var/www/.composer-global \
-  && composer init --working-dir=/var/www/.composer-global --no-interaction \
+  && composer init --name=docker-iac-magento/2.4 --working-dir=/var/www/.composer-global --no-interaction \
   && composer require --working-dir=/var/www/.composer-global markshust/magento2-metapackage-devtools-cli:^1.0
 
 RUN curl -s https://packages.blackfire.io/gpg.key | apt-key add - \
