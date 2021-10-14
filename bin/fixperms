@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Fixing filesystem permissions..."
-
+chown  1000:1000 -R src/
 if [ -z "$1" ]; then
   bin/clinotty find var vendor pub/static pub/media app/etc \( -type f -or -type d \) -exec chmod u+w {} +;
   bin/clinotty chmod u+x bin/magento

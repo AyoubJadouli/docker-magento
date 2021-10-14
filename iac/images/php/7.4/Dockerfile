@@ -1,5 +1,5 @@
 FROM php:7.4-fpm-buster
-MAINTAINER Ayoub JADOULI <mark@shust.com>
+MAINTAINER Ayoub JADOULI <ayoub.jadouli@deenamic.fr>
 
 RUN apt-get update && apt-get install -y \
   cron \

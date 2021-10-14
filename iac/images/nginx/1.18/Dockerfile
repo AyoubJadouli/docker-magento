@@ -1,5 +1,5 @@
 FROM nginx:1.18-alpine
-MAINTAINER Ayoub JADOULI <mark@shust.com>
+MAINTAINER Ayoub JADOULI <ayoub.jadouli@deenamic.fr>
 
 RUN addgroup -g 1000 app \
  && adduser -G app -u 1000 -h /var/www -s /bin/bash -S app

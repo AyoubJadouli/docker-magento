@@ -11,3 +11,4 @@ docker-compose -f docker-compose.yml up -d
 bin/setup-composer-auth
 
 bin/clinotty composer create-project --repository=https://repo.magento.com/ magento/project-"${EDITION}"-edition="${VERSION}" .
+bin/clinotty cp nginx.conf.sample nginx.conf

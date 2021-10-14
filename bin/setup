@@ -6,7 +6,7 @@ source iac/env/db.env
 # shellcheck source=../env/magento.env
 source iac/env/magento.env
 
-BASE_URL=${1:-magento2.test}
+BASE_URL=${1:-magento.test}
 ES_HOST=elasticsearch
 ES_PORT=9200
 
