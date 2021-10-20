@@ -418,21 +418,8 @@ Next, open up the `bin/start` helper script and uncomment the line:
 ```
 
 Finally, restart the containers with `bin/restart`. After doing so, everything is now configured and you can use a browser extension to profile your Magento store with Blackfire.
-
-## Credits
-
-### M.academy
-
-This course is sponsored by <a href="https://m.academy" target="_blank">M.academy</a>, the simplest way to learn Magento.
-
-<a href="https://m.academy" target="_blank"><img src="https://raw.githubusercontent.com/AyoubJADOULI/docker-magento/master/docs/macademy-logo.png" alt="M.academy"></a>
-
-### Ayoub JADOULI
-
-My name is Ayoub JADOULI and I'm the creator of this repo. I'm a <a href="http://www.zend.com/en/yellow-pages/ZEND014633" target="_blank">Zend Certified Engineer</a> and <a href="https://www.youracclaim.com/users/mark-shust" target="_blank">Adobe Certified Magento Developer</a>, and have been involved since the early days of Magento (0.8!). I'm no longer available for consulting, but am creating course content full-time at <a href="https://m.academy" target="_blank">M.academy</a>.
-
-You can follow me on Twitter <a href="https://twitter.com/AyoubJADOULI" target="_blank">@AyoubJADOULI</a>, connect with me on LinkedIn <a href="https://www.linkedin.com/in/AyoubJADOULI/" target="_blank">@AyoubJADOULI</a>, read my blog at <a href="https://AyoubJADOULI.com" target="_blank">AyoubJADOULI.com</a>, or contact me directly at <a href="mailto:ayoub.jadouli@deenamic.fr">ayoub.jadouli@deenamic.fr</a>.
-
+## Credit
+Thanks to [markshust](https://github.com/markshust/docker-magento)
 ## License
 
 [MIT](https://opensource.org/licenses/MIT)
