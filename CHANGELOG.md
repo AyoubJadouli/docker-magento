@@ -297,7 +297,7 @@ Happy new year! 🎉
 - New `bin/update` helper script that updates your docker-magento setup to the latest version
 - Added `.gitignore` file to project root to ignore `src` directory. It is recommended to keep your root docker config files in one repository, and your Magento code setup in another. This ensures the Magento base path lives at the top of one specific repository, which makes automated build pipelines and deployments easy to manage, and maintains compatibility with projects such as Magento Cloud.
 - Install n98-magerun2 when setup is executed, and added related `bin/n98-magerun` and `bin/devconsole` helper scripts.
-- Added `bin/setup-pwa-studio` (BETA) helper script to easily install PWA Studio, usage accepts a single parameter being the site URL you wish PWA Studio to connect to (ex. `bin/setup-pwa-studio magento2.test`)
+- Added `bin/setup-pwa-studio` (BETA) helper script to easily install PWA Studio, usage accepts a single parameter being the site URL you wish PWA Studio to connect to (ex. `bin/setup-pwa-studio magento.test`)
 - Added `bin/pwa-studio` (BETA) helper script to easily run the PWA Studio NodeJS web server
 
 ### Fixed

@@ -21,14 +21,9 @@ services:
       #- appdata:/var/www/html
       - sockdata:/sock
       - ssldata:/etc/nginx/certs
-    labels:
-      - "traefik.enable=true"
-############################## Config du nom de domaine de la Cert. #######################      
-      - "traefik.http.routers.app.rule=Host(`magento.test`)"
-    ###########################################____________#######
-      - "traefik.http.routers.app.entrypoints=websecure"
-      - "traefik.http.routers.app.tls.certresolver=myresolver"
-      - "traefik.http.services.app.loadbalancer.server.port=8000"
+      - ./iac/images/nginx/1.18/conf/default.conf:/etc/nginx/conf.d/default.conf
+
+
 
   varnish:
     build:
@@ -44,7 +39,14 @@ services:
     links:
       - app
       - db
-
+    labels:
+      - "traefik.enable=true"
+############################## Config du nom de domaine de la Cert. #######################      
+      - "traefik.http.routers.app.rule=Host(`magento.test`)"
+    ###########################################____________#######
+      - "traefik.http.routers.app.entrypoints=websecure"
+      - "traefik.http.routers.app.tls.certresolver=myresolver"
+      - "traefik.http.services.app.loadbalancer.server.port=80"
   phpfpm:
     build:
       context: ./iac/images/php/7.4
